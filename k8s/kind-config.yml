@@ -7,10 +7,10 @@ nodes:
   - role: control-plane
     # Exposes ports from local machine to the ingress controller inside cluster
     extraPortMappings:
-      - containerPort: 80
+      - containerPort: 80     # HTTP Ingress
         hostPort: 80
-        protcol: TCP
-      - containerPort: 443
+        protocol: TCP
+      - containerPort: 443    # HTTPS Ingress
         hostPort: 443
         protocol: TCP
 
