@@ -1,2 +1,4 @@
 
+# Ingress that allows the frontend to be exposed
 
+apiVersion: networking.k8s.io/v1
