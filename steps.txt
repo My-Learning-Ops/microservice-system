@@ -1,0 +1,4 @@
+
+1. Create Kind Cluster
+    - kind create cluster --name NAME --config CONFIG.yml
+2. 
