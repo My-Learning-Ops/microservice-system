@@ -1,4 +1,12 @@
 
 1. Create Kind Cluster
     - kind create cluster --name NAME --config CONFIG.yml
-2. 
+
+    → Group of computing nodes or worker machines (virtual or physical)
+      that run containerized applications.
+
+2. Create namespace
+    - kubectl create namespace NAME
+
+    → Organizes and groups local resources.
+
