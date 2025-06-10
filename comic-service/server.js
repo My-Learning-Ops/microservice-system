@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
     res.send('Server up and running...');
 });
 
-app.get('/comics', (req, res) => {
+app.get('/comics', async (req, res) => {
     try {
-        const comics = Comic.find();
+        const comics = await Comic.find();
         console.log('Comics Fetched!');
         return res.status(200).json({ comics: comics });
     } catch (error) {
