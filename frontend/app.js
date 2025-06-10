@@ -1,5 +1,5 @@
 
-const URL = 'http://localhost:5001/';
+const URL = '/api/';
 const form = document.getElementById('messageForm');
 const messages = document.getElementById('messages');
 
