@@ -17,11 +17,23 @@ console.log(process.env.MONGO_URI);
 
 // GET all
 app.get('/', (req, res) => {
-    res.send('Server up and running.');
+    res.send('Server up and running...');
 });
 
+app.get('/comics', (req, res) => {
+    try {
+        const comics = Comic.find();
+        console.log('Comics Fetched!');
+        return res.status(200).json({ comics: comics });
+    } catch (error) {
+        console.error('An error occurred while fetching the comics!');
+        console.error(`Error: ${error.message}`);
+        res.status(500).json({ message: 'Server Error' });
+    }
+})
+
 // POST a comic
-app.post('/', async (req, res) => {
+app.post('/comics', async (req, res) => {
     const { title, author, issue, volume, releaseDate } = req.body;
     if (!title) return res.status(400).json({ message: 'Title is required for this type of request!' });
 
