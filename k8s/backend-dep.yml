@@ -18,6 +18,9 @@ spec:
       containers:
       - name: backend
         image: brendanddev/backend
+        env:
+          - name: MONGO_URI
+            value: mongodb://mongo-svc:27017/messagesdb
         resources:
           requests:
             memory: "120Mi"
