@@ -2,3 +2,21 @@
 # Ingress that allows the frontend to be exposed
 
 apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microsystem-ingress
+  namespace: microsystem
+  labels:
+    name: myingress
+spec:
+  rules:
+  - host: frontend.localhost
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: frontend-svc
+            port: 
+              number: 80
