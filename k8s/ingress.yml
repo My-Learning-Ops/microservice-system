@@ -7,24 +7,25 @@ metadata:
   name: microsystem-ingress
   namespace: microsystem
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-  - http:
-    paths:
-      - path: /api/?(.*)
-        pathType: Prefix
-        backend: 
-          service: 
-            name: backend-svc
-            port:
-              number: 5000
+    - host: localhost
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-svc
+                port:
+                  number: 5000
 
-      - path: /?(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: frontend-svc
-            port:
-              number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 80

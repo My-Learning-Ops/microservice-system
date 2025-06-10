@@ -10,3 +10,12 @@
 
     → Organizes and groups local resources.
 
+
+3. Apply Deployments and Services
+    - kubcetl apply -f FILE
+
+    → Organizes and groups local resources.
+
+
+
+
